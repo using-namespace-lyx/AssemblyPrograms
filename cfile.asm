@@ -1,0 +1,17 @@
+;; 3x+4y+9z   2 3 4
+
+	AREA RESET,CODE
+	ENTRY
+	MOV R0,#2 ;X
+	MOV R1,#3 ;Y
+	MOV R2,#4 ;Z
+	MOV R4,#0
+	
+	ADD R4,R0,R0,LSL#1
+	ADD R4,R1,LSL#2
+	ADD R2,R2,R2,LSL#3
+	ADD R4,R2
+	
+S   B S
+	END
+

@@ -1,0 +1,25 @@
+	AREA RESET,CODE
+	ENTRY
+	
+	LDR R0,=NUMS
+	LDR R1,[R0];great
+	LDR R2,[R0];small
+	MOV R3,#6
+	ADD R0,#4
+	SUB R3,#1
+	
+LOOP
+	LDR R4,[R0]
+	CMP R4,R1
+	MOVGT R1,R4
+	CMP R4,R2
+	MOVLT R2,R4
+	ADD R0,#4
+	SUBS R3,#1
+	BNE LOOP
+	
+S B S
+
+NUMS DCD &3,&2,&A,&2,&1,&5
+	
+	END
